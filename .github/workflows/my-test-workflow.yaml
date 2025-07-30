@@ -22,20 +22,21 @@ env:
   GITHUB_DEBUG: false
   
 jobs:
-  build:
+  OTLP-GitHubAction-Exporter :
+    name: OTLP GitHubAction Exporter
     runs-on: ubuntu-latest
-    
+    if: ${{ always() }}
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
       
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
         
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
       
-    - name: Run tests
-      run: npm test
+      - name: Run tests
+        run: npm test
