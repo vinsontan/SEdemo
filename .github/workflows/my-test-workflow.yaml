@@ -40,3 +40,6 @@ jobs:
       
       - name: Run tests
         run: npm test
+      
+      - name: Run OTLP GitHubAction Exporter
+        uses: StephenGoodall/OTLP-GitHubAction-Exporter@v3
