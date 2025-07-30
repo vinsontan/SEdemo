@@ -5,23 +5,22 @@ on:
   workflow_run:
     workflows: ['*']
     types: [completed]
-
-  permissions: read-all
-
-  env:
-    ACTION_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    OTEL_EXPORTER_OTLP_ENDPOINT: https://xnj93051.live.dynatrace.com/api/v2/otlp/
-    OTLP_PROTOCOL: HTTP
-    WORKFLOW_RUN_ID: ${{ github.event.workflow_run.id }}
-    WORKFLOW_RUN_NAME: ${{ github.event.workflow_run.name }}
-    OTEL_EXPORTER_OTLP_HEADERS: Authorization=Api-Token ${{ secrets.DYNATRACE_OTEL_API_TOKEN }}
-    GITHUB_DEBUG: false
-  
   push:
     branches: [ main, develop ]
   pull_request:
     branches: [ main ]
 
+permissions: read-all
+
+env:
+  ACTION_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  OTEL_EXPORTER_OTLP_ENDPOINT: https://xnj93051.live.dynatrace.com/api/v2/otlp/
+  OTLP_PROTOCOL: HTTP
+  WORKFLOW_RUN_ID: ${{ github.event.workflow_run.id }}
+  WORKFLOW_RUN_NAME: ${{ github.event.workflow_run.name }}
+  OTEL_EXPORTER_OTLP_HEADERS: Authorization=Api-Token ${{ secrets.DYNATRACE_OTEL_API_TOKEN }}
+  GITHUB_DEBUG: false
+  
 jobs:
   build:
     runs-on: ubuntu-latest
