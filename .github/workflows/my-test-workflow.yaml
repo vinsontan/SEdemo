@@ -19,7 +19,7 @@ env:
   WORKFLOW_RUN_ID: ${{ github.event.workflow_run.id }}
   WORKFLOW_RUN_NAME: ${{ github.event.workflow_run.name }}
   OTEL_EXPORTER_OTLP_HEADERS: Authorization=Api-Token ${{ secrets.DYNATRACE_OTEL_API_TOKEN }}
-  GITHUB_DEBUG: false
+  GITHUB_DEBUG: true
   
 jobs:
   OTLP-GitHubAction-Exporter :
