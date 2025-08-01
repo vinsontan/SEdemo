@@ -1,6 +1,7 @@
 name: CI Pipeline with otel tracing
 
 # Define when the workflow runs
+# making some changes to trigger workflow
 on:
   workflow_run:
     workflows: ['*']
