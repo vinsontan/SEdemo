@@ -6,10 +6,10 @@ on:
   workflow_run:
     workflows: ['*']
     types: [completed]
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main ]
+#  push:
+#    branches: [ main, develop ]
+#  pull_request:
+#    branches: [ main ]
 
 permissions: read-all
 
